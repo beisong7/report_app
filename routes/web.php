@@ -27,3 +27,5 @@ Route::get('email/edit/{id}', 'EmailController@emailsEdit')->name('email.edit');
 Route::post('email/edit/{id}', 'EmailController@emailsUpdate')->name('email.edit');
 
 Route::get('resolve-case-action', 'ActionController@toggleState')->name('toggle.case');
+
+Route::get('export/excel/{type}', 'ExportController@exportData')->name('export.excel');

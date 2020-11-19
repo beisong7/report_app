@@ -26,6 +26,7 @@
                                 </form>
                                 <a class="btn btn-primary" href="{{ route('email') }}">All</a>
                                 <a class="btn btn-primary" href="{{ route('email',['type'=>'unresolved']) }}">Unresolved</a>
+                                <a class="btn btn-primary" href="{{ route('export.excel','email') }}">Download Excel</a>
                             </div>
                         </div>
                         <div>
