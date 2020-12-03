@@ -12,4 +12,5 @@
     <option value="Invalid Enrollment Number" {{ old('issue')==='Invalid Enrollment Number'?'selected':'' }}>Invalid Enrollment Number</option>
     <option value="Registration Link" {{ old('issue')==='Registration Link'?'selected':'' }}>Registration Link</option>
     <option value="Wrong NBA Phone Number" {{ old('issue')==='Wrong NBA Phone Number'?'selected':'' }}>Wrong NBA Phone Number</option>
+    <option value="Profile Update" {{ old('issue')==='Others'?'selected':'' }}>Others</option>
 </select>
