@@ -2,24 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="926a2ce0-5ec9-42c9-949b-48c48dcbac51" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/Imports/ExcelImport.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/Traits/Importer.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/views/layouts/nav.blade.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/views/pages/import.blade.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/views/pages/unfiltered/index.blade.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Http/Controllers/ActionController.php" afterPath="$PROJECT_DIR$/app/Http/Controllers/ActionController.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Http/Controllers/EmailController.php" afterPath="$PROJECT_DIR$/app/Http/Controllers/EmailController.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Http/Controllers/ExportController.php" afterPath="$PROJECT_DIR$/app/Http/Controllers/ExportController.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Http/Controllers/HomeController.php" afterPath="$PROJECT_DIR$/app/Http/Controllers/HomeController.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Http/Controllers/PhoneController.php" afterPath="$PROJECT_DIR$/app/Http/Controllers/PhoneController.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Models/Email.php" afterPath="$PROJECT_DIR$/app/Models/Email.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Models/Phone.php" afterPath="$PROJECT_DIR$/app/Models/Phone.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/views/home.blade.php" afterPath="$PROJECT_DIR$/resources/views/home.blade.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/views/layouts/issues_field.blade.php" afterPath="$PROJECT_DIR$/resources/views/layouts/issues_field.blade.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/views/pages/list_email.blade.php" afterPath="$PROJECT_DIR$/resources/views/pages/list_email.blade.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/views/pages/list_phone.blade.php" afterPath="$PROJECT_DIR$/resources/views/pages/list_phone.blade.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/routes/web.php" afterPath="$PROJECT_DIR$/routes/web.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Http/Controllers/ImportController.php" afterPath="$PROJECT_DIR$/app/Http/Controllers/ImportController.php" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -59,7 +43,8 @@
         <entry file="file://$PROJECT_DIR$/app/Http/Controllers/ImportController.php">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="261">
-              <caret line="103" column="72" lean-forward="false" selection-start-line="103" selection-start-column="72" selection-end-line="103" selection-end-column="72" />
+              <caret line="152" column="39" lean-forward="false" selection-start-line="152" selection-start-column="39" selection-end-line="152" selection-end-column="39" />
+              <caret line="157" column="39" lean-forward="false" selection-start-line="157" selection-start-column="39" selection-end-line="157" selection-end-column="39" />
               <folding>
                 <element signature="e#40#68#0#PHP" expanded="true" />
               </folding>
@@ -70,8 +55,8 @@
       <file leaf-file-name="web.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/routes/web.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="204">
-              <caret line="21" column="76" lean-forward="true" selection-start-line="21" selection-start-column="76" selection-end-line="21" selection-end-column="76" />
+            <state relative-caret-position="272">
+              <caret line="25" column="65" lean-forward="false" selection-start-line="25" selection-start-column="49" selection-end-line="25" selection-end-column="65" />
               <folding />
             </state>
           </provider>
@@ -156,6 +141,7 @@
       <find>Emai::</find>
       <find>Email::</find>
       <find>updateOldRecords</find>
+      <find>invalid</find>
     </findStrings>
     <replaceStrings>
       <replace>$entry</replace>
@@ -621,12 +607,12 @@
       <workItem from="1605888902751" duration="1239000" />
       <workItem from="1605900218984" duration="651000" />
       <workItem from="1606822900350" duration="10614000" />
-      <workItem from="1606990258723" duration="10639000" />
+      <workItem from="1606990258723" duration="11553000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="66665000" />
+    <option name="totallyTimeSpent" value="67579000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-7" y="0" width="1614" height="877" extended-state="0" />
@@ -1033,14 +1019,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/routes/web.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="204">
-          <caret line="21" column="76" lean-forward="true" selection-start-line="21" selection-start-column="76" selection-end-line="21" selection-end-column="76" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/resources/views/pages/unfiltered/index.blade.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="119">
@@ -1049,10 +1027,19 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/routes/web.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="272">
+          <caret line="25" column="65" lean-forward="false" selection-start-line="25" selection-start-column="49" selection-end-line="25" selection-end-column="65" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/app/Http/Controllers/ImportController.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="261">
-          <caret line="103" column="72" lean-forward="false" selection-start-line="103" selection-start-column="72" selection-end-line="103" selection-end-column="72" />
+          <caret line="152" column="39" lean-forward="false" selection-start-line="152" selection-start-column="39" selection-end-line="152" selection-end-column="39" />
+          <caret line="157" column="39" lean-forward="false" selection-start-line="157" selection-start-column="39" selection-end-line="157" selection-end-column="39" />
           <folding>
             <element signature="e#40#68#0#PHP" expanded="true" />
           </folding>

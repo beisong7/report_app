@@ -150,12 +150,12 @@ class ImportController extends Controller
     }
 
     public function updateOldRecords(){
-        $phones = Phone::where('active', '!=', true)->get();
+        $phones = Phone::where('active', null)->get();
         foreach ($phones as $phone){
             $phone->active = true;
             $phone->update();
         }
-        $emails = Email::where('active', '!=', true)->get();
+        $emails = Email::where('active', null)->get();
         foreach ($emails as $email){
             $email->active = true;
             $email->update();
