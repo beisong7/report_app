@@ -17,5 +17,7 @@ class Email extends Model
         'opened',
         'mail_count',
         'closed',
+        'comment',
+        'active',
     ];
 }

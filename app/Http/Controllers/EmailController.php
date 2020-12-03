@@ -47,6 +47,7 @@ class EmailController extends Controller
             $data['name'] = $name;
             $data['call_count'] = 1;
             $data['uuid'] = $uuid;
+            $data['active'] = true;
             $data['opened'] = date('Y/m/d');
 
             if($status==='Resolved'){
@@ -75,7 +76,7 @@ class EmailController extends Controller
 
     public function emails(Request $request){
 
-        $query = Email::orderBy('opened', 'desc');
+        $query = Email::orderBy('opened', 'desc')->where('active', true);
         $query = $this->setType($request, $query);
         $query = $this->trySearch($request, $query);
 
@@ -105,7 +106,7 @@ class EmailController extends Controller
     }
 
     public function emailsEdit($uuid){
-        $item = Email::whereUuid($uuid)->first();
+        $item = Email::whereUuid($uuid)->where('active', true)->first();
         if(!empty($item)){
             return view('pages.edit_email')->with(['item'=>$item]);
         }
@@ -113,7 +114,7 @@ class EmailController extends Controller
     }
 
     public function emailsUpdate(Request $request, $uuid){
-        $item = Email::whereUuid($uuid)->first();
+        $item = Email::whereUuid($uuid)->where('active', true)->first();
         if(!empty($item)){
 
             $email = $request->input("email");

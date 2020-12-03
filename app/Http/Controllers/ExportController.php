@@ -36,9 +36,9 @@ class ExportController extends Controller
 
     function setModel($type){
         if($type==='phone'){
-            return Phone::orderBy('opened', 'asc');
+            return Phone::orderBy('opened', 'asc')->where('active', true);
         }else{
-            return Email::orderBy('opened', 'asc');
+            return Email::orderBy('opened', 'asc')->where('active', true);
         }
     }
 

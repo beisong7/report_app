@@ -17,5 +17,7 @@ class Phone extends Model
         'opened',
         'call_count',
         'closed',
+        'comment',
+        'active',
     ];
 }

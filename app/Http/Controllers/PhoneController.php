@@ -46,6 +46,7 @@ class PhoneController extends Controller
             $data['name'] = $name;
             $data['call_count'] = 1;
             $data['uuid'] = $uuid;
+            $data['active'] = true;
             $data['opened'] = date('Y/m/d');
             if($status==='Resolved'){
                 $data['closed'] = date('Y/m/d');
@@ -72,7 +73,7 @@ class PhoneController extends Controller
 
     public function phones(Request $request){
 
-        $query = Phone::orderBy('opened', 'desc');
+        $query = Phone::orderBy('opened', 'desc')->where('active', true);
         $query = $this->setType($request, $query);
         $query = $this->trySearch($request, $query);
 
@@ -101,7 +102,7 @@ class PhoneController extends Controller
     }
 
     public function phonesEdit($uuid){
-        $item = Phone::whereUuid($uuid)->first();
+        $item = Phone::whereUuid($uuid)->where('active', true)->first();
         if(!empty($item)){
             return view('pages.edit_phone')->with(['item'=>$item]);
         }
@@ -110,7 +111,7 @@ class PhoneController extends Controller
 
     public function phonesUpdate(Request $request, $uuid){
 
-        $item = Phone::whereUuid($uuid)->first();
+        $item = Phone::whereUuid($uuid)->where('active', true)->first();
         if(!empty($item)){
             $phone = $request->input("phone");
             $scn = $request->input("scn");
@@ -128,6 +129,22 @@ class PhoneController extends Controller
             $item->update($data);
             DB::commit();
             return back()->withMessage('Record updated');
+        }
+        return back()->withErrors(['Resource not found']);
+    }
+
+    public function updateUnfiltered(Request $request){
+        $uuid = $request->input('uuid');
+        $issue = $request->input('issue');
+
+        $phone = Phone::where('uuid', $uuid)->where('active', false)->first();
+        if(!empty($phone)){
+            $data['issue'] = $issue;
+            $data['active'] = true;
+            DB::beginTransaction();
+            $phone->update($data);
+            DB::commit();
+            return redirect()->route('unfiltered')->withMessage('One Unfiltered record updated');
         }
         return back()->withErrors(['Resource not found']);
     }

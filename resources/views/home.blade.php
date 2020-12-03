@@ -6,12 +6,7 @@
             <div class="col-md-12">
                 <div class="card">
                     <div class="card-header">
-                        <b>
-                            <a class="btn btn-primary btn-sm " href="{{ route('home') }}">Dashboard</a>
-                            <a class="btn btn-primary btn-sm float-right ml-3" href="{{ route('email') }}">Emails</a>
-                            <a class="btn btn-primary btn-sm float-right ml-3" href="{{ route('phone') }}">Phones</a>
-                        </b>
-
+                        @include('layouts.nav')
                     </div>
 
                     <div class="card-body">

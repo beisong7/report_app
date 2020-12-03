@@ -12,11 +12,19 @@
 */
 
 Route::get('/', 'HomeController@index')->name('home');
+Route::get('unfiltered', 'HomeController@unfiltered')->name('unfiltered');
 Route::post('save/phone', 'PhoneController@store')->name('save.phone');
 Route::post('save/email', 'EmailController@store')->name('save.email');
 
 
 Route::get('phone/', 'PhoneController@phones')->name('phone');
+Route::get('import', 'ImportController@import')->name('import');
+Route::post('import', 'ImportController@startImport')->name('start.import');
+
+//deleting records
+Route::get('delete/entry', 'ImportController@deleteEntry');
+Route::get('update/old/entry', 'ImportController@updateOldRecords');
+Route::post('update/entry/update', 'PhoneController@updateUnfiltered')->name('update.unfiltered');
 
 Route::get('email/', 'EmailController@emails')->name('email');
 

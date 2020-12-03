@@ -14,10 +14,10 @@ class ActionController extends Controller
         $uuid = $request->input('uuid');
 
         if($type==='mail'){
-            $item = Email::whereUuid($uuid)->first();
+            $item = Email::whereUuid($uuid)->where('active', true)->first();
             return $this->toggleItem($uuid, $item);
         }else{
-            $item = Phone::whereUuid($uuid)->first();
+            $item = Phone::whereUuid($uuid)->where('active', true)->first();
             return $this->toggleItem($uuid, $item);
         }
     }
