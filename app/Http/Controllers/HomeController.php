@@ -31,7 +31,7 @@ class HomeController extends Controller
 
     public function unfiltered(){
         $phones = Phone::where('active', false)->get()->count();
-        $phone = Phone::orderBy('opened','desc')->where('active', false)->first();
+        $phone = Phone::inRandomOrder()->where('active', false)->first();
         return view('pages.unfiltered.index')->with(
             [
                 'phones'=>$phones,
