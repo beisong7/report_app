@@ -3,7 +3,7 @@
     <option value="Reactivation" {{ old('issue')==='Reactivation'?'selected':'' }}>Reactivation</option>
     <option value="Password Reset" {{ old('issue')==='Password Reset'?'selected':'' }}>Password Reset</option>
     <option value="Enquiry" {{ old('issue')==='Enquiry'?'selected':'' }}>Enquiry</option>
-    <option value="Enquiry" {{ old('issue')==='OTP'?'OTP':'' }}>OTP</option>
+    <option value="OTP" {{ old('issue')==='OTP'?'OTP':'' }}>OTP</option>
     <option value="Profile Update" {{ old('issue')==='Profile Update'?'selected':'' }}>Profile Update</option>
     <option value="Stuck In Approved" {{ old('issue')==='Stuck In Approved'?'selected':'' }}>Stuck In Approved</option>
     <option value="Login Enquiry" {{ old('issue')==='Login Enquiry'?'selected':'' }}>Login Enquiry</option>
