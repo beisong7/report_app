@@ -3,6 +3,7 @@
     <option value="Reactivation" {{ $item->issue==='Reactivation'?'selected':'' }}>Reactivation</option>
     <option value="Password Reset" {{ $item->issue==='Password Reset'?'selected':'' }}>Password Reset</option>
     <option value="Enquiry" {{ $item->issue==='Enquiry'?'selected':'' }}>Enquiry</option>
+    <option value="OTP" {{ $item->issue==='OTP'?'selected':'' }}>OTP</option>
     <option value="Profile Update" {{ $item->issue==='Profile Update'?'selected':'' }}>Profile Update</option>
     <option value="Stuck In Approved" {{ $item->issue==='Stuck In Approved'?'selected':'' }}>Stuck In Approved</option>
     <option value="Login Enquiry" {{ $item->issue==='Login Enquiry'?'selected':'' }}>Login Enquiry</option>
